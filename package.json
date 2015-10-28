@@ -1,0 +1,24 @@
+{
+  "name": "rappin-robot",
+  "version": "0.0.1",
+  "description": "A robot that raps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mguida22/rappin-robot.git"
+  },
+  "author": "mguida22",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mguida22/rappin-robot/issues"
+  },
+  "homepage": "https://github.com/mguida22/rappin-robot#readme",
+  "dependencies": {
+    "dotenv": "^1.2.0",
+    "got": "^5.0.0",
+    "pos": "^0.3.0"
+  }
+}
