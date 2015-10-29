@@ -1,6 +1,5 @@
 'use strict';
 
-require('dotenv').load();
 const got = require('got');
 const pos = require('pos');
 
@@ -69,22 +68,35 @@ function getRhyme(word) {
   });
 }
 
-getSentences().then(sentences => {
-  let firstSentence = randomElement(sentences);
-  let secondSentence = firstSentence;
-  while (firstSentence === secondSentence) {
-    secondSentence = randomElement(sentences);
-  }
+function lyrics() {
+  return new Promise(function(resolve, reject) {
+    getSentences().then(sentences => {
+      let firstSentence = randomElement(sentences).trim();
+      let secondSentence = firstSentence;
+      while (firstSentence === secondSentence) {
+        secondSentence = randomElement(sentences).trim();
+      }
 
-  firstSentence = firstSentence.split(' ');
-  secondSentence = secondSentence.split(' ');
-  let endWord = firstSentence[firstSentence.length - 1];
+      firstSentence = firstSentence.split(' ');
+      secondSentence = secondSentence.split(' ');
+      let endWord = firstSentence[firstSentence.length - 1];
 
-  getRhyme(endWord).then(rhyme => {
-    console.log(firstSentence.join(' '));
-    secondSentence[secondSentence.length - 1] = rhyme;
-    console.log(secondSentence.join(' '));
-  }).catch(err => {
-    console.log(err);
+      getRhyme(endWord).then(rhyme => {
+        firstSentence = firstSentence.join(' ');
+        secondSentence[secondSentence.length - 1] = rhyme;
+        secondSentence = secondSentence.join(' ');
+
+        resolve([
+          firstSentence,
+          secondSentence
+        ]);
+      }).catch(err => {
+        reject(err);
+      });
+    });
   });
-});
+}
+
+module.exports = {
+  lyrics
+};

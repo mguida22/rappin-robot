@@ -19,11 +19,25 @@ In recent years, memories are quenchless detective
 
 Note: this project requires node 4.0+
 
+### Install
 ```
 $ git clone <repo>
 $ cd rappin-robot
 $ npm install
-$ node index.js
+```
+
+### Add .env
+
+Create a `.env` file in the root directory and add the [api](http://developer.wordnik.com/) key in the following format:
+
+```
+API=<your-api-key-here>
+```
+
+### Run
+
+```
+$ node main.js
 ```
 
 ## License
