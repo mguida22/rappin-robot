@@ -1,6 +1,6 @@
 'use strict';
 
-require('dotenv').load();
+require('dotenv').config({silent: true});
 const rap = require('./rap');
 const Twit = require('twit');
 
