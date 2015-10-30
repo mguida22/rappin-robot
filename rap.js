@@ -37,7 +37,7 @@ function getSentences() {
 }
 
 function getRhyme(word) {
-  let url = `http://api.wordnik.com:80/v4/word.json/${word}/relatedWords?useCanonical=false&relationshipTypes=rhyme&limitPerRelationshipType=100&api_key=${process.env.API_KEY}`;
+  let url = `http://api.wordnik.com:80/v4/word.json/${word}/relatedWords?useCanonical=false&relationshipTypes=rhyme&limitPerRelationshipType=100&api_key=${process.env.WORDNIK_API_KEY}`;
   return new Promise((resolve, reject) => {
     got(url)
       .then(response => {
