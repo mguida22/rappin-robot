@@ -40,6 +40,21 @@ API=<your-api-key-here>
 $ node main.js
 ```
 
+### Heroku
+
+This program makes use of [heroku's scheduler](https://devcenter.heroku.com/articles/scheduler) to run one off tasks on an interval. This allows the program to automatically run every 10 minutes (doesn't always post to twitter).
+
+To push changes to heroku
+
+```
+$ git push heroku master
+```
+
+To manually run the task (while logged in)
+```
+$ heroku run worker
+```
+
 ## License
 MIT
 
