@@ -1,6 +1,6 @@
 # rappin-robot
 
-A robot that raps.
+A [robot](https://twitter.com/rappin_robot) that raps.
 
 ## Sample Outputs
 
