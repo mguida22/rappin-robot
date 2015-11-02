@@ -1,7 +1,7 @@
 'use strict';
 
 require('dotenv').config({silent: true});
-const rap = require('./rap');
+const rap = require('lib/rap');
 const Twit = require('twit');
 
 let T = new Twit({
