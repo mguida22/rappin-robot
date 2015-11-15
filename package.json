@@ -21,7 +21,6 @@
   "homepage": "https://github.com/mguida22/rappin-robot#readme",
   "dependencies": {
     "dotenv": "^1.2.0",
-    "got": "^5.0.0",
     "pos": "^0.3.0",
     "sentencer": "^0.1.4",
     "syllable": "^0.1.4",
