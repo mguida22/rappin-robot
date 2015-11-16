@@ -17,7 +17,7 @@ In recent years, memories are quenchless detective
 
 ## Setup
 
-Note: this project requires node 4.0+
+Note: this project requires node 4.2.1+
 
 ### Install
 ```
@@ -28,11 +28,17 @@ $ npm install
 
 ### Add .env
 
-Create a `.env` file in the root directory and add the [api](http://developer.wordnik.com/) key in the following format:
+Create a `.env` file in the root directory and add the [twitter credentials](https://dev.twitter.com/) key in the following format:
 
 ```
-API=<your-api-key-here>
+T_CONSUMER_KEY=<your_key_here>
+T_CONSUMER_SECRET=<your_secret_here>
+T_ACCESS_TOKEN=<your_token_here>
+T_ACCESS_TOKEN_SECRET=<your_token_secret_here>
+NODE_ENV=<development|production>
 ```
+
+You can set the `NODE_ENV` to either `production` (tweets to your account, you will need credentials) or `development` (outputs to console, no credentials required).
 
 ### Run
 
@@ -42,7 +48,7 @@ $ node main.js
 
 ### Heroku
 
-This program makes use of [heroku's scheduler](https://devcenter.heroku.com/articles/scheduler) to run one off tasks on an interval. This allows the program to automatically run every 10 minutes (doesn't always post to twitter).
+This program makes use of [heroku's scheduler](https://devcenter.heroku.com/articles/scheduler) to run one off tasks on an interval. This allows the program to automatically run every hour (only posts to twitter if it got a rhyme).
 
 To push changes to heroku
 
@@ -58,7 +64,7 @@ $ heroku run worker
 ## License
 MIT
 
-This project makes heavy use of apis and work provided by:
-- [kylestetz/metaphorpsum](https://github.com/kylestetz/metaphorpsum)
+This project makes heavy use of the work provided by:
+- [kylestetz/Sentencer](https://github.com/kylestetz/Sentencer)
 - [dariusk/pos-js](https://github.com/dariusk/pos-js)
-- [wordnik.com](https://www.wordnik.com/)
+- [cmusphinx/cmudict](https://github.com/cmusphinx/cmudict)
